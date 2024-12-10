@@ -104,7 +104,25 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="subway_3" startnode="3" creator="Twine" creator-version="2.9.2" format="SugarCube" format-version="2.37.3" ifid="cd8c97c4-6059-4c2d-a17b-3ac894203694" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="교장" tags="" position="175,800" size="100,100">&lt;head&gt;
+	<tw-storydata name="subway_3" startnode="3" creator="Twine" creator-version="2.9.2" format="SugarCube" format-version="2.37.3" ifid="cd8c97c4-6059-4c2d-a17b-3ac894203694" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">var bgMusic = new Audio("https://taehyeon-masu.github.io/gather-5/subway_2.mp3");
+bgMusic.loop = true; // 반복 재생
+bgMusic.volume = 0.5; // 초기 볼륨 설정
+
+// 음악이 로드되면 재생
+bgMusic.addEventListener("canplaythrough", function() {
+    bgMusic.play().then(function() {
+        bgMusic.muted = false; // 성공적으로 재생되면 음소거 해제
+    }).catch(function(error) {
+        console.log("자동 재생 차단됨: ", error);
+    });
+});
+
+// 페이지 로드 시 음악 준비
+$(document).on(":passagerender", function() {
+    if (bgMusic.paused) {
+        bgMusic.load(); // 음악 로드 시도
+    }
+});</script><tw-passagedata pid="1" name="교장" tags="" position="175,800" size="100,100">&lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
     &lt;title&gt;Example&lt;/title&gt;
@@ -188,12 +206,12 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
          alt=&quot;방사진&quot; class=&quot;room_back&quot;&gt;
          
       &lt;!-- 대화창--&gt;
-    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/31c4edefa857e319b5aa07d9808cb62d/______.png?token=oounyxTlD9AFnGl-1qCO_9L_BDmCDEet9nkJj-yz2gpIxTEDebJiM70_iupfDxQFj9U7yObrNDwjmmXXOdvdtoM-_KoMcEY0s3UQoU5-mLOQNIrnB_hV9PKIZhIwNFazwn5ROsknz_hKH_0z8ZwrbQdGjFopbOqMYDG3f_VHVD7buUmEEOhaqdQU-LbDj7ziW9VThmCfbX62YKglM8xzB95nPcjg5SfgAwMFcB6tp_E=&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
+    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/b3d59a4e6a9600b9f42f10e7e0827494/______.png?token=B7zmIKo2RSwcmNvamEOudnxaLVd--RYJ78XXQmrqjlZDiQ8LUwEF94inUI1FtKcb7tjOJiMXbl8-qUNDropZXdkl-zIdPoOrp8I9SsSg61KuYOJtbcIG2f1iA2HQjPxGS26SGloQSXMGf_WQrjzSPAwgGaGPCpTt1FTbWVuhDqP6vGvvgxRWPkz0A-AvDvxXcZiNf7qzHxXdKR9zQyTwbUBJQXZdGWPAIp8ifkYKUeQ=&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
 
 
 
     &lt;!-- 텍스트 --&gt;
-    &lt;p class=&quot;text1&quot;&gt;학생 교복이 익숙한데..이름이 어떻게 되니?&lt;/p&gt;
+    &lt;p class=&quot;text1&quot;&gt;학생 교복이 익숙한데.. 이름이 어떻게 되니?&lt;/p&gt;
     &lt;p class=&quot;bottom-text&quot;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;[[다음-&gt;라희3]]&lt;/p&gt; 
 &lt;/body&gt;</tw-passagedata><tw-passagedata pid="2" name="끝" tags="" position="175,1050" size="100,100"></tw-passagedata><tw-passagedata pid="3" name="라희1" tags="" position="175,175" size="100,100">&lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -284,7 +302,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 
     &lt;!-- 텍스트 --&gt;
-    &lt;p class=&quot;text1&quot;  style=&quot;color: #B0B0B0;&quot; &gt;(이렇게 앉아있어도 되나..? 일어나야하는게 아닐까…?)&lt;/p&gt;
+    &lt;p class=&quot;text1&quot;  style=&quot;color: #B0B0B0;&quot; &gt;(이렇게 앉아있어도 되나..? 일어나야 하는 게 아닐까…?)&lt;/p&gt;
      &lt;p class=&quot;text2&quot;&gt;어 할머니 여기 앉으세요!!!&lt;/p&gt;
     &lt;p class=&quot;bottom-text&quot;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;[[다음-&gt;할머니1]]&lt;/p&gt;
 &lt;/body&gt;</tw-passagedata><tw-passagedata pid="4" name="라희2" tags="" position="175,425" size="100,100">&lt;head&gt;
@@ -371,12 +389,12 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
          alt=&quot;방사진&quot; class=&quot;room_back&quot;&gt;
          
       &lt;!-- 대화창--&gt;
-    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/3e6fb8bbe0bf83efbdfa84eb9d3d9929/______.png?token=oounyxTlD9AFnGl-1qCO_9L_BDmCDEet9nkJj-yz2gpIxTEDebJiM70_iupfDxQFj9U7yObrNDwjmmXXOdvdtoM-_KoMcEY0s3UQoU5-mLOQNIrnB_hV9PKIZhIwNFazvAWEZtnQjd0CtjG9PDMPUN6VpZ3zdtIx3uYdlNHYpScJx5xVf319-Md-9uVvoitOujymgirlkyDmVPytSV-K3JmxP7MqmPEde83_iB1ds6k=&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
+    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/857fab4d1f199e8cdd4ab1af47d32ea6/______.png?token=B7zmIKo2RSwcmNvamEOudnxaLVd--RYJ78XXQmrqjlZDiQ8LUwEF94inUI1FtKcb7tjOJiMXbl8-qUNDropZXdkl-zIdPoOrp8I9SsSg61KuYOJtbcIG2f1iA2HQjPxGaX-0CNPMyajgsuw70y2KjS7jhwk5fruK3xnI7CL8JJultzzDyrhPCevto4shpfjY3w5eI2zTWnfjHWrRlUq9Bp76On3BGPEJP_PEC5BpkP0=&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
 
 
 
     &lt;!-- 텍스트 --&gt;
-    &lt;p class=&quot;text1&quot;&gt;아니에요! 당연히 양보해 드려야죠&lt;/p&gt;
+    &lt;p class=&quot;text1&quot;&gt;아니에요! 당연히 양보해 드려야죠!&lt;/p&gt;
     &lt;p class=&quot;bottom-text&quot;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;[[다음-&gt;앞아저씨]]&lt;/p&gt;
 &lt;/body&gt;</tw-passagedata><tw-passagedata pid="5" name="라희3" tags="" position="175,925" size="100,100">&lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -462,13 +480,14 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
          alt=&quot;방사진&quot; class=&quot;room_back&quot;&gt;
          
       &lt;!-- 대화창--&gt;
-    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/3e6fb8bbe0bf83efbdfa84eb9d3d9929/______.png?token=oounyxTlD9AFnGl-1qCO_9L_BDmCDEet9nkJj-yz2gpIxTEDebJiM70_iupfDxQFj9U7yObrNDwjmmXXOdvdtoM-_KoMcEY0s3UQoU5-mLOQNIrnB_hV9PKIZhIwNFazvAWEZtnQjd0CtjG9PDMPUN6VpZ3zdtIx3uYdlNHYpScJx5xVf319-Md-9uVvoitOujymgirlkyDmVPytSV-K3JmxP7MqmPEde83_iB1ds6k=&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
+    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/857fab4d1f199e8cdd4ab1af47d32ea6/______.png?token=B7zmIKo2RSwcmNvamEOudnxaLVd--RYJ78XXQmrqjlZDiQ8LUwEF94inUI1FtKcb7tjOJiMXbl8-qUNDropZXdkl-zIdPoOrp8I9SsSg61KuYOJtbcIG2f1iA2HQjPxGaX-0CNPMyajgsuw70y2KjS7jhwk5fruK3xnI7CL8JJultzzDyrhPCevto4shpfjY3w5eI2zTWnfjHWrRlUq9Bp76On3BGPEJP_PEC5BpkP0=&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
 
 
 
     &lt;!-- 텍스트 --&gt;
-    &lt;p class=&quot;text1&quot; style=&quot;color: #B0B0B0;&quot;&gt; (내가 하는 행동에 따라 결과가 크게 바뀔 수도 있구나… )&lt;/p&gt;
-     &lt;p class=&quot;text2&quot; style=&quot;color: #B0B0B0;&quot;&gt;(내가 한 건 자리를 비켜 준 것밖에 없는데.. 좀 뿌듯하네..)&lt;/p&gt;
+    &lt;p class=&quot;text1&quot;&gt;아.. 하하하.. 네에.. 저는 도라희에요.&lt;/p&gt;
+    &lt;p class=&quot;text2&quot; style=&quot;color: #B0B0B0;&quot;&gt; (내가 하는 행동에 따라 결과가 크게 바뀔 수도 있구나...&lt;/p&gt;
+     &lt;p class=&quot;text3&quot; style=&quot;color: #B0B0B0;&quot;&gt;내가 한 건 자리를 비켜 준 것밖에 없는데.. 좀 뿌듯하네..)&lt;/p&gt;
     &lt;p class=&quot;bottom-text&quot;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;[[끝]]&lt;/p&gt;
 &lt;/body&gt;</tw-passagedata><tw-passagedata pid="6" name="아주머니" tags="" position="175,675" size="100,100">&lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -554,7 +573,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
          alt=&quot;방사진&quot; class=&quot;room_back&quot;&gt;
          
       &lt;!-- 대화창--&gt;
-    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/bf56c09ddee9ab7782ec56be045c07d9/_______.png?token=oounyxTlD9AFnGl-1qCO_9L_BDmCDEet9nkJj-yz2gpIxTEDebJiM70_iupfDxQFj9U7yObrNDwjmmXXOdvdtoM-_KoMcEY0s3UQoU5-mLOQNIrnB_hV9PKIZhIwNFazywopvvvuzcQzgjVMWeM6KELmgly4GRAhZHyZFFRmlfXj4DEGn0mdbaBV3oGHGIE-huPVyQwNj-GGh4JnGSSdw_BmzD_e7zqiyuxdgndv3IeBZCe8-0v81tgBw4FDFAXg&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
+    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/835b493ad43094b386d2d9603bd7e7b7/______.png?token=B7zmIKo2RSwcmNvamEOudnxaLVd--RYJ78XXQmrqjlZDiQ8LUwEF94inUI1FtKcb7tjOJiMXbl8-qUNDropZXdkl-zIdPoOrp8I9SsSg61KuYOJtbcIG2f1iA2HQjPxGxG_kA_y-ij47GAsTLn_abaRTuQS6GUlPFRYwjaRcNQ9d1lUuZ9OA0tXOMcYJr8u8qucrXJmwUBGg9uqi1BdgPDWNKJklfrY9y1J_ATpWPtU=&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
 
 
 
@@ -645,7 +664,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
          alt=&quot;방사진&quot; class=&quot;room_back&quot;&gt;
          
       &lt;!-- 대화창--&gt;
-    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/15951771724caabc559559f10bd28ae9/_______.png?token=oounyxTlD9AFnGl-1qCO_9L_BDmCDEet9nkJj-yz2gpIxTEDebJiM70_iupfDxQFj9U7yObrNDwjmmXXOdvdtoM-_KoMcEY0s3UQoU5-mLOQNIrnB_hV9PKIZhIwNFazOVcM9jpwaDmHhsEZf6iwMMnuIz_d0cronWwHiZw_prfYg1X3XG_xvSi6X5mfB0gw7T6a0C80485mBoigiG4T7lQApFqwDzGDqrnxYhW-FCU4jcCoF4bdLz2eDQRyubGV&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
+    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/1c5235b200263e652356f3ee9b52e786/______.png?token=B7zmIKo2RSwcmNvamEOudnxaLVd--RYJ78XXQmrqjlZDiQ8LUwEF94inUI1FtKcb7tjOJiMXbl8-qUNDropZXdkl-zIdPoOrp8I9SsSg61KuYOJtbcIG2f1iA2HQjPxGhceqRgcxWEuVfsCbdCPEyRcXUr3Vw1wFN_rKH242l6ePFMdbfKQMbHAhw082rbFy1qlwfhH3M6kGEZ2Tx9QqYh7a_31phoR5O4VW4Y1id2c=&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
 
 
 
@@ -736,12 +755,12 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
          alt=&quot;방사진&quot; class=&quot;room_back&quot;&gt;
          
       &lt;!-- 대화창--&gt;
-    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/141f434d7b85ee84d4312f50d0000368/_______.png?token=oounyxTlD9AFnGl-1qCO_9L_BDmCDEet9nkJj-yz2gpIxTEDebJiM70_iupfDxQFj9U7yObrNDwjmmXXOdvdtoM-_KoMcEY0s3UQoU5-mLOQNIrnB_hV9PKIZhIwNFaziZsiqr36MDLmL6Ya9B-9jLAYn6XAc-Cy3-xKhXB7D9dZoVlPfEfCOFCz9KAiSIr3s8NWqUJrt-XF1229_Os-m5gHW9U_IhfxmSE_dHVph_95wbwkjlglGjbDu7mm01lr&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
+    &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/97e1be391a7b35ce9ca24daee0290585/__________.png?token=B7zmIKo2RSwcmNvamEOudnxaLVd--RYJ78XXQmrqjlZDiQ8LUwEF94inUI1FtKcb7tjOJiMXbl8-qUNDropZXdkl-zIdPoOrp8I9SsSg61KuYOJtbcIG2f1iA2HQjPxGWUdR6RdxoPDvsSDZwNWqmVG3k7Kfp00jvto9w40QWFtR6g12_HUYdDhpuIe3ypikTxp9ZP4NrzRglRRJ8tyk5t54TRkTGGgRXVVU_2lOkrjcDkpyauTZUc2yC_yU0uq5&quot; alt=&quot;스마트폰&quot; class=&quot;room_back&quot;&gt;
 
 
 
     &lt;!-- 텍스트 --&gt;
-    &lt;p class=&quot;text1&quot;  style=&quot;color: #B0B0B0;&quot; &gt;어머 학생 고마워요 안그래도 몸이 안좋았는데 고마우잉.&lt;/p&gt;
+    &lt;p class=&quot;text1&quot; &gt;어머 학생 고마워요 안 그래도 몸이 안 좋았는데 고마우잉.&lt;/p&gt;
     &lt;p class=&quot;bottom-text&quot;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;[[다음-&gt;라희2]]&lt;/p&gt;
 &lt;/body&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">

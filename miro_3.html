@@ -104,7 +104,25 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="miro_3" startnode="1" creator="Twine" creator-version="2.9.2" format="SugarCube" format-version="2.37.3" ifid="5f5a3cb4-f981-4d53-8034-54e57177ccda" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Set as Starting Point&quot;" tags="" position="625,225" size="100,100">&lt;head&gt;
+	<tw-storydata name="miro_3" startnode="1" creator="Twine" creator-version="2.9.2" format="SugarCube" format-version="2.37.3" ifid="5f5a3cb4-f981-4d53-8034-54e57177ccda" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">var bgMusic = new Audio("https://taehyeon-masu.github.io/gather-5/subway_2.mp3");
+bgMusic.loop = true; // 반복 재생
+bgMusic.volume = 0.5; // 초기 볼륨 설정
+
+// 음악이 로드되면 재생
+bgMusic.addEventListener("canplaythrough", function() {
+    bgMusic.play().then(function() {
+        bgMusic.muted = false; // 성공적으로 재생되면 음소거 해제
+    }).catch(function(error) {
+        console.log("자동 재생 차단됨: ", error);
+    });
+});
+
+// 페이지 로드 시 음악 준비
+$(document).on(":passagerender", function() {
+    if (bgMusic.paused) {
+        bgMusic.load(); // 음악 로드 시도
+    }
+});</script><tw-passagedata pid="1" name="Set as Starting Point&quot;" tags="" position="625,225" size="100,100">&lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
     &lt;title&gt;Example&lt;/title&gt;
@@ -192,7 +210,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     &lt;img src=&quot;https://u1.padletusercontent.com/uploads/padlet-uploads/3062689127/3e6fb8bbe0bf83efbdfa84eb9d3d9929/______.png?token=oounyxTlD9AFnGl-1qCO_9L_BDmCDEet9nkJj-yz2gpIxTEDebJiM70_iupfDxQFj9U7yObrNDwjmmXXOdvdtoM-_KoMcEY0s3UQoU5-mLOQNIrnB_hV9PKIZhIwNFazvAWEZtnQjd0CtjG9PDMPUN6VpZ3zdtIx3uYdlNHYpScJx5xVf319-Md-9uVvoitOujymgirlkyDmVPytSV-K3JmxP7MqmPEde83_iB1ds6k=&quot; alt=&quot;대화창&quot; class=&quot;room_back&quot;&gt;
 
     &lt;!-- 텍스트 --&gt;
-    &lt;p class=&quot;text1&quot;&gt;이번에는 너무 힘들었어.. 다시는 이런건 못할것 같아.&lt;/p&gt;
+    &lt;p class=&quot;text1&quot;&gt;이번에는 너무 힘들었어.. 다시는 이런 건 못할 것 같아.&lt;/p&gt;
     &lt;p class=&quot;bottom-text&quot;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;[[다음-&gt;miro]]&lt;/p&gt;
 &lt;/body&gt;</tw-passagedata><tw-passagedata pid="2" name="miro" tags="" position="425,775" size="100,100">&lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
